@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"crypto/sha1"
 	"fmt"
-	"github.com/alecthomas/units"
+	"github.com/buchanae/units"
 	"github.com/buchanae/cwl"
 	"github.com/buchanae/cwl/process"
 	"io"
