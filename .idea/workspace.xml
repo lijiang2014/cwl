@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3dc23b6-c23f-4cdf-9df1-090ab86244b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/kj1-bwa-mem-tool/args.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/kj1-bwa-mem-tool/chr20.fa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/kj1-bwa-mem-tool/example_human_Illumina.pe_1.fastq" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/kj1-bwa-mem-tool/example_human_Illumina.pe_2.fastq" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/kj1-bwa-mem-tool/job.cwl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/kj1-bwa-mem-tool/meta.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/examples/kj1-bwa-mem-tool/tool.cwl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/cwl/dump.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/cwl/dump.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/cwl/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/cwl/root.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/cwl/run.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/cwl/run.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/cwl/version.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/cwl/version.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/util.sh" beforeDir="false" afterPath="$PROJECT_DIR$/examples/util.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expr/expr.go" beforeDir="false" afterPath="$PROJECT_DIR$/expr/expr.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expr/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/expr/util.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loader.go" beforeDir="false" afterPath="$PROJECT_DIR$/loader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/args.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/args.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/env/simple/simple.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/env/simple/simple.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/fs.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/fs.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/fs/local/local.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/fs/local/local.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/inputs.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/inputs.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/outputs.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/outputs.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/process.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/process.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/process/workflow.go" beforeDir="false" afterPath="$PROJECT_DIR$/process/workflow.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.go" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/values_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/values_test.go" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/../../../../pkg/mod/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/examples/000-bwa-mem-tool/job.cwl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="419">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -113,8 +86,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/go.mod">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="10" column="69" lean-forward="true" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+            <state relative-caret-position="515">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -146,10 +119,13 @@
       <find>Meta</find>
       <find>Run(</find>
       <find>Temp</find>
+      <find>github.com/buchanae/yamlast</find>
+      <find>github.com/commondream/yamlast</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>github.com/lijiang2014/cwl</replace>
+      <replace>github.com/lijiang2014/yamlast</replace>
     </replaceStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -164,13 +140,13 @@
       <list>
         <option value="$PROJECT_DIR$/process/inputs.go" />
         <option value="$PROJECT_DIR$/examples/020-cat-tool/meta.yaml" />
-        <option value="$PROJECT_DIR$/go.mod" />
         <option value="$PROJECT_DIR$/requirements.go" />
         <option value="$PROJECT_DIR$/cmd/cwl/run.go" />
         <option value="$PROJECT_DIR$/loader.go" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/examples/000-bwa-mem-tool/tool.cwl" />
         <option value="$PROJECT_DIR$/examples/008-cat3-tool-mediumcut/tool.cwl" />
+        <option value="$PROJECT_DIR$/go.mod" />
       </list>
     </option>
   </component>
@@ -222,17 +198,6 @@
               <item name="cwl" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
-            <path>
-              <item name="cwl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Modules &lt;github.com/lijiang2014/cwl&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-            </path>
-            <path>
-              <item name="cwl" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Go Modules &lt;github.com/lijiang2014/cwl&gt;" type="20ee2d1f:SyntheticLibraryElementNode" />
-              <item name="yamlast@v0.0.0-20160529193950-1f01fc418da0" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -241,6 +206,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
@@ -585,7 +551,7 @@
     <entry file="file://$PROJECT_DIR$/examples/000-bwa-mem-tool/job.cwl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
@@ -598,8 +564,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/go.mod">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="10" column="69" lean-forward="true" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
+        <state relative-caret-position="515">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
