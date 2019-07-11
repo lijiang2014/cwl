@@ -87,3 +87,38 @@ I've taken some liberties with the CWL spec:
 - `$include` and `$import` statements are not yet implemented, but will be.
 - The CWL expression parser is not robust and will not correctly parse complex expressions, especially those containing `$()` and escaping.
 - documentation and examples are still sparse, more on the way soon.
+
+## Tests and Features 
+
+* 0 PASS  General test of command line generation
+* 1 PASS Test nested prefixes with arrays
+* 2 FAIL: SchemaDefRequirement is not supported (yet)
+* 3 PASS  Test command line with optional input (missing)
+* 4 PASS  Test command line with optional input (provided)
+* 5 FAIL: InitialWorkDirRequirement is not supported (yet)
+* 6 PASS Test command execution in Docker with stdout redirection
+* 7 PASS  Test command execution in Docker with simplified syntax stdout redirection
+* 8 PASS  Test command execution in Docker with stdout redirection
+* 9 PASS Test command line with stderr redirection
+* 10 PASS  Test command line with stderr redirection, brief syntax
+* 11 P Test command line with stderr redirection, named brief syntax
+* 12 FAIL 未实现 STDIN 的功能
+* 13 - 18 FAIL: Error: running doc: unknown doc type "ExpressionTool" ; Test default usage of Any in expressions.
+* 19 FAIL: 未实现 ANY 的功能 ;   Testing Any type compatibility in outputSource
+
+共 126 个测试，后面的进行省略
+
+* 采用实际 App 进行测试 ：
+
+* hpc-batch lammps
+* hpc-session dcv
+* k8s-batch fit-10
+* k8s-session tesorflow
+
+** 添加了 ClusterRequirement 用来进行作业的路由描述
+
+和 endpoint 的关联关系
+
+* job 状态为 running 后建立 endpoint ,并 建立 job 和 endpoint 的关联
+* 从R队列中删除 job 时 ， 关联删除 endpoint 记录
+

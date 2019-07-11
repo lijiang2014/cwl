@@ -2,8 +2,8 @@ package process
 
 import (
 	"encoding/json"
-	"github.com/buchanae/cwl"
-	"github.com/buchanae/cwl/expr"
+	"github.com/lijiang2014/cwl"
+	"github.com/lijiang2014/cwl/expr"
 	"github.com/rs/xid"
 )
 

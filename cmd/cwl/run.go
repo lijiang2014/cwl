@@ -2,21 +2,23 @@ package main
 
 import (
   "context"
-  "fmt"
   "encoding/json"
+  "fmt"
+  "github.com/lijiang2014/tugboat/docker"
+  "github.com/lijiang2014/tugboat/localos"
+  
+  "github.com/lijiang2014/cwl"
+  "github.com/lijiang2014/cwl/process"
+  localfs "github.com/lijiang2014/cwl/process/fs/local"
   "path/filepath"
-  "github.com/buchanae/cwl"
-  "github.com/buchanae/cwl/process"
-  localfs "github.com/buchanae/cwl/process/fs/local"
-  //gsfs "github.com/buchanae/cwl/process/fs/gs"
-
-  tug "github.com/buchanae/tugboat"
-  "github.com/buchanae/tugboat/docker"
-  "github.com/buchanae/tugboat/storage/local"
+  //gsfs "github.com/lijiang2014/cwl/process/fs/gs"
+  
+  tug "github.com/lijiang2014/tugboat"
+  "github.com/lijiang2014/tugboat/storage/local"
   //gsstore "github.com/buchanae/tugboat/storage/gs"
-
-  "github.com/spf13/cobra"
+  
   "github.com/rs/xid"
+  "github.com/spf13/cobra"
 )
 
 func init() {
@@ -25,6 +27,7 @@ func init() {
 
   cmd := &cobra.Command{
     Use: "run <doc.cwl> <inputs.json>",
+    Short: "run",
     Args: cobra.ExactArgs(2),
     RunE: func(cmd *cobra.Command, args []string) error {
       return run(args[0], args[1], outdir, debug)
@@ -38,6 +41,7 @@ func init() {
 }
 
 func run(path, inputsPath, outdir string, debug bool) error {
+  fmt.Println("local cwl run.")
   vals, err := cwl.LoadValuesFile(inputsPath)
   if err != nil {
     return err
@@ -189,9 +193,15 @@ func (r *runner) runTool(tool *cwl.Tool, vals cwl.Values) (cwl.Values, error) {
   } else {
     log = tug.EmptyLogger{}
   }
-  exec := &docker.Docker{
-    Logger: log,
-    NoPull: true,
+  
+  var exec tug.Executor
+  if _, got :=tool.RequiresDocker() ; got {
+    exec = &docker.Docker{
+      Logger: log,
+      NoPull: true,
+    }
+  } else {
+    exec = &localos.LocalOS{  Logger:log, EnvAppend:true}
   }
 
 	stage, err := tug.NewStage("cwl-workdir", 0755)

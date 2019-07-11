@@ -1,7 +1,7 @@
 package cwl
 
 import (
-	"github.com/buchanae/cwl/fs"
+	"github.com/lijiang2014/cwl/fs"
 	"testing"
 )
 

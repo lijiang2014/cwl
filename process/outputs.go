@@ -1,7 +1,7 @@
 package process
 
 import (
-	"github.com/buchanae/cwl"
+	"github.com/lijiang2014/cwl"
 	"github.com/spf13/cast"
 	"reflect"
 )

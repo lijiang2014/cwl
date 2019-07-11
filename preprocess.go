@@ -1,7 +1,7 @@
 package cwl
 
 import (
-	"github.com/commondream/yamlast"
+	"github.com/lijiang2014/yamlast"
 )
 
 func (l *loader) preprocess(n node) (node, error) {

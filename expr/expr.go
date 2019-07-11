@@ -1,7 +1,7 @@
 package expr
 
 import (
-	"github.com/buchanae/cwl"
+	"github.com/lijiang2014/cwl"
 	"github.com/robertkrimen/otto"
 	"regexp"
 	"strings"

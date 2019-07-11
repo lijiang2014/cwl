@@ -13,6 +13,26 @@ type DockerRequirement struct {
 	OutputDirectory string `json:"dockerOutputDirectory,omitempty"`
 }
 
+// SchedulerRequirement 用来描述作业执行的环境
+// 对于本地运行实际可以缺省
+// 用来在作业网关上控制作业路由，实际的值可以由 inputs 解析获取
+// 组合 DockerRequirement 使用可以创建 k8s-job 应用
+type SchedulerRequirement struct {
+	Scheduler string `json:"scheduler,omitempty"`
+	Cluster Expression `json:"cluster,omitempty"`
+	Partition Expression `json:"partition,omitempty"`
+	Nodes Expression `json:"nodes,omitempty"`
+	SchedulerArgs []Expression `json:"args,omitempty"`
+}
+
+// KubernetesRequirement 用来描述 Kubernetes deployment
+// 用来控制 k8s-deployment 应用的创建
+type KubernetesRequirement struct {
+	Deployments []Expression `json:"deployments,omitempty"`
+	Proxies []Expression `json:"proxies,omitempty"`
+}
+
+
 type ResourceRequirement struct {
 	CoresMin  Expression `json:"coresMin,omitempty"`
 	CoresMax  Expression `json:"coresMax,omitempty"`

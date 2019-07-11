@@ -4,7 +4,7 @@ import (
   "fmt"
   "encoding/json"
   "github.com/go-yaml/yaml"
-  "github.com/buchanae/cwl"
+  "github.com/lijiang2014/cwl"
   "github.com/spf13/cobra"
 )
 

@@ -2,7 +2,7 @@ package main
 
 import (
   "fmt"
-  "github.com/buchanae/cwl/version"
+  "github.com/lijiang2014/cwl/version"
   "github.com/spf13/cobra"
 )
 

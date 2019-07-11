@@ -2,7 +2,7 @@ package cwl
 
 import (
 	"fmt"
-	"github.com/commondream/yamlast"
+	"github.com/lijiang2014/yamlast"
 	"github.com/spf13/cast"
 	"reflect"
 	"strings"
@@ -208,7 +208,8 @@ func (l *loader) loadMappingToStruct(n node, t interface{}) error {
 	return nil
 }
 
-// coerceSet attempts to coerce "val" to the type of "dest".
+// coerceSet at
+// tempts to coerce "val" to the type of "dest".
 // If coercion succeeds, "dest" is set to the coerced value of "val".
 // coerceSet panics if "dest" is not a pointer.
 func coerceSet(dest interface{}, val interface{}) error {

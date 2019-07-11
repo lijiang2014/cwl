@@ -1,9 +1,9 @@
 package simple
 
 import (
-  "github.com/buchanae/cwl"
-  "github.com/buchanae/cwl/process"
-  "github.com/buchanae/cwl/process/fs/local"
+  "github.com/lijiang2014/cwl"
+  "github.com/lijiang2014/cwl/process"
+  "github.com/lijiang2014/cwl/process/fs/local"
 )
 
 type SimpleEnv struct {

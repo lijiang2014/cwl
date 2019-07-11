@@ -1,7 +1,7 @@
 package process
 
 import (
-	"github.com/buchanae/cwl"
+	"github.com/lijiang2014/cwl"
 	"github.com/spf13/cast"
 )
 
@@ -224,7 +224,21 @@ Loop:
 			return []*Binding{
 				{clb, z, v, key, nil, name},
 			}, nil
-
+		
+		case cwl.TypeRef:
+			if rsd , ok := process.tool.RequiresSchemaDef(); ok {
+				for _, rsdT :=range rsd.Types {
+					if rsdT.Name == z.Name[1:] {
+						//do something
+						// how to parse Value -> rsdT.Type ?
+						st := rsdT.Type
+						return []*Binding{
+							{ clb, z, st, key, nil, name },
+						},nil
+					}
+				}
+			}
+			continue Loop
 		}
 	}
 

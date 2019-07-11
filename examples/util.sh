@@ -3,3 +3,5 @@ cwltest () {
   echo
   cwl run $1-*/tool.cwl $1-*/job.cwl
 }
+
+cwltest $1

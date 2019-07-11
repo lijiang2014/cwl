@@ -2,7 +2,7 @@ package cwl
 
 import (
 	"fmt"
-	"github.com/commondream/yamlast"
+	"github.com/lijiang2014/yamlast"
 	"strings"
 )
 
