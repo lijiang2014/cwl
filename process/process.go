@@ -5,6 +5,7 @@ import (
 	"github.com/lijiang2014/cwl"
 	"github.com/lijiang2014/cwl/expr"
 	"github.com/rs/xid"
+	"log"
 )
 
 type Mebibyte int
@@ -15,6 +16,7 @@ type Runtime struct {
 	Outdir string
 	Tmpdir string
 	// TODO make these all strings?
+	RootHost string
 	Cores      string
 	RAM        Mebibyte
 	OutdirSize Mebibyte
@@ -180,9 +182,54 @@ func (process *Process) loadReqs() error {
 		case cwl.SchemaDefRequirement:
 			return errf("SchemaDefRequirement is not supported (yet)")
 		case cwl.InitialWorkDirRequirement:
-			return errf("InitialWorkDirRequirement is not supported (yet)")
+			//return errf("InitialWorkDirRequirement is not supported (yet)")
+			err := process.evalWorkDirRequirement(z.Listing)
+			if err != nil {
+				return errf("failed to evaluate EnvVarRequirement: %s", err)
+			}
+			return nil
 		}
 	}
+	return nil
+}
+
+func (process *Process) evalWorkDirRequirement(def []cwl.InitialWorkDirListing) error {
+	for _, filei := range def {
+		var (
+			filename, filedata string
+		)
+		{
+			expr := filei.Entry
+			val, err := process.eval(expr, nil)
+			if err != nil {
+				return errf(`failed to evaluate expression: "%s": %s`, expr, err)
+			}
+			str, ok := val.(string)
+			if !ok {
+				return errf(`EnvVar must evaluate to a string, got "%s"`, val)
+			}
+			filedata = str
+		}
+		
+		{
+			expr := filei.Entryname
+			val, err := process.eval(expr, nil)
+			if err != nil {
+				return errf(`failed to evaluate expression: "%s": %s`, expr, err)
+			}
+			str, ok := val.(string)
+			if !ok {
+				return errf(`EnvVar must evaluate to a string, got "%s"`, val)
+			}
+			//log.Println("file i , file name", str)
+			filename = str
+		}
+		// write file into fs.
+		_ ,err := process.fs.Create(filename, filedata)
+		return err
+		//process.env[k] = str
+	}
+	log.Printf("skip InitialWorkDirRequirement %#v", def)
 	return nil
 }
 

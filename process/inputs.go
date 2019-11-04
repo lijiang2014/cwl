@@ -3,6 +3,7 @@ package process
 import (
 	"github.com/lijiang2014/cwl"
 	"github.com/spf13/cast"
+	"path/filepath"
 )
 
 /*** CWL input binding code ***/
@@ -205,8 +206,10 @@ Loop:
 			if err != nil {
 				return nil, err
 			}
-			// TODO figure out a good way to do this.
-			f.Path = "/inputs/" + f.Path
+			// use process.runtime.RootHost as /
+			f.Path = filepath.Join(process.runtime.RootHost  ,"/inputs/" ,  f.Path)
+			
+			//f.Path = "/inputs/" + f.Path
 			for _, expr := range secondaryFiles {
 				process.resolveSecondaryFiles(f, expr)
 			}

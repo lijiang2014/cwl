@@ -61,7 +61,14 @@ func (l *Local) Create(path, contents string) (cwl.File, error) {
 	if err != nil {
 		return x, errf("getting absolute path for %s: %s", loc, err)
 	}
-
+  fd , err := os.Create(loc)
+  if err != nil {
+		return x, errf("create file for %s: %s ( %s , %s)", loc, err , l.workdir, path )
+	}
+  _, err =fd.Write(b)
+  if err != nil {
+		return x, errf("write file contents for %s: %s", loc, err)
+	}
 	return cwl.File{
 		Location: abs,
 		Path:     path,

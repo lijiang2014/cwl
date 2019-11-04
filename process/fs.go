@@ -2,12 +2,13 @@ package process
 
 import (
 	"errors"
+	
 	//"github.com/buchanae/units"
 	"github.com/alecthomas/units"
 	
+	"github.com/google/uuid"
 	"github.com/lijiang2014/cwl"
 	"github.com/lijiang2014/cwl/expr"
-	"github.com/google/uuid"
 	"path/filepath"
 	"strings"
 )
@@ -105,7 +106,7 @@ func (process *Process) resolveFile(f cwl.File, loadContents bool) (cwl.File, er
 	}
 	f.Nameroot, f.Nameext = splitname(f.Basename)
 	f.Dirname = filepath.Dir(f.Path)
-
+	//f.Nameroot = process.runtime.RootHost
 	return f, nil
 }
 

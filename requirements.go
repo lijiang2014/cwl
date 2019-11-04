@@ -25,6 +25,12 @@ type SchedulerRequirement struct {
 	SchedulerArgs []Expression `json:"args,omitempty"`
 }
 
+// ParallelRequirement 用来描述作业执行的并行环境
+// Runtime 会根据需要 进行 srun/mpirun 的 包装
+type ParallelRequirement struct {
+	MpiEnabled  bool `json:"writeable,omitempty"`
+}
+
 // KubernetesRequirement 用来描述 Kubernetes deployment
 // 用来控制 k8s-deployment 应用的创建
 type KubernetesRequirement struct {
@@ -74,11 +80,14 @@ type SoftwarePackage struct {
 	Specs   []string `json:"specs,omitempty"`
 }
 
-type InitialWorkDirListing struct{}
+type InitialWorkDirListing struct{
+	Entry     Expression `json:"entry,omitempty"`
+	Entryname Expression `json:"entryname,omitempty"`
+}
 
 type InitialWorkDirRequirement struct {
 	// TODO the most difficult union type
-	Listing InitialWorkDirListing `json:"listing,omitempty"`
+	Listing []InitialWorkDirListing `json:"listing,omitempty"`
 }
 
 type Dirent struct {
