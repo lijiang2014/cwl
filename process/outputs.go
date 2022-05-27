@@ -10,14 +10,14 @@ import (
 
 // Outputs binds cwl.Tool output descriptors to concrete values.
 func (process *Process) Outputs(fs Filesystem) (cwl.Values, error) {
-	outdoc, err := fs.Contents("cwl.output.json")
-	if err != nil && err != ErrFileNotFound {
-		return nil, err
-	}
-	if err == nil {
-		// TODO type check the output values
-		return cwl.LoadValuesBytes([]byte(outdoc))
-	}
+	//outdoc, err := fs.Contents("cwl.output.json")
+	//if err != nil && err != ErrFileNotFound {
+	//	return nil, err
+	//}
+	//if err == nil {
+	//	// TODO type check the output values
+	//	return cwl.LoadValuesBytes([]byte(outdoc))
+	//}
 
 	values := cwl.Values{}
 	for _, out := range process.tool.Outputs {

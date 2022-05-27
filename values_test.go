@@ -1,7 +1,7 @@
 package cwl
 
 import (
-	"github.com/lijiang2014/cwl/fs"
+	fs "github.com/lijiang2014/cwl/process/fs/local"
 	"testing"
 )
 
@@ -10,7 +10,7 @@ func TestResolveFile(t *testing.T) {
 		Location: "./examples/record.cwl",
 	}
 
-	l := fs.NewLocal()
+	l := fs.NewLocal("/tmp")
 	x, err := ResolveFile(f, l, true)
 	if err != nil {
 		t.Error(err)
