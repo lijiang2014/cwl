@@ -23,7 +23,13 @@ func (process *Process) Outputs(fs Filesystem) (cwl.Values, error) {
 	for _, out := range process.tool.Outputs {
 		v, err := process.bindOutput(fs, out.Type, out.OutputBinding, out.SecondaryFiles, nil)
 		if err != nil {
-			return nil, errf(`failed to bind value for "%s": %s`, out.ID, err)
+			//for _, x := range out.Type {
+			//	if x.String() == (cwl.Null{}).String() {
+			//		values[out.ID] = cwl.Null{}
+			//	}
+			//}
+			values[out.ID] = cwl.Null{}
+			//return nil, errf(`failed to bind value for "%s": %s`, out.ID, err)
 		}
 		values[out.ID] = v
 	}
